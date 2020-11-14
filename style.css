@@ -66,15 +66,18 @@ canvas {
     padding: 15px;
 }
 
-
+body > div > div.aide > button{
+    position: relative;
+    left: 130px;
+}
 
 .aide {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    background-color: rgb(238, 175, 175);
+    top: 35%;
+    left: 35%;
+    background-color: rgb(158, 63, 60);
     width: 400px;
-    height: 150px;
     padding: 20px;
     font-size: large;
+    color : white;
 }

@@ -1,3 +1,4 @@
+
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
 const body = document.querySelector("body > div")
@@ -5,6 +6,7 @@ body.appendChild(newBallon)
 
 const close = document.querySelector("body > div > div.aide > button")
 close.addEventListener("click", function () {
+     let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
 })
@@ -14,23 +16,31 @@ function rand(max) {
     return Math.floor(Math.random() * max);
 }
 let time = 1000;
-const compteurTime = document.querySelector("#lights > span:nth-child(6)")
-compteurTime.innerHTML = time
+let timer = 9;
+const compteurTime = document.querySelector("#lights > span:nth-child(5)")
+compteurTime.innerHTML = timer
 let nbTour = 0;
 let light = 0;
 let score = 0;
 let plus = 0;
 
 const button = document.querySelector("#ballon2")
-button.addEventListener("click", essaieDeBouton);
+button.addEventListener("click", leTireDesEnfers);
 
-function essaieDeBouton() {
+function leTireDesEnfers() {
+    timer += 6
+    addBallon()
     score += plus
     score.innerHTML = score
     document.querySelector('#score').innerHTML = score
 }
 
 function changeLight() {
+    if(timer <= 0){
+        window.location =""
+        alert("T'as perdu")
+    
+    }
     bougeBallon()
     const lightDivs = document.querySelectorAll('#lights>div');
     const colors = ['#F00', '#AA0', '#0F0']
@@ -38,6 +48,7 @@ function changeLight() {
     if (light === 0) {
         for (let lightDiv of lightDivs) {
             lightDiv.style.background = '#AAA'
+
         }
     }
 
@@ -47,8 +58,11 @@ function changeLight() {
         light++;
     else
         light = 0
+        timer -= 1
+        compteurTime.innerHTML = timer
 
 }
+
 
 function increaseScore() {
     if (light == 2) {
@@ -63,12 +77,8 @@ function increaseScore() {
 
     }
 
-
-    if (score >= 5) {
-        window.clearInterval(lightInterval)
-        alert('VICTORY!')
-    }
 }
+
 
 function couleurRandom() {
     var letters = '0123456789ABCDEF';
@@ -82,7 +92,7 @@ function couleurRandom() {
 let tablu = []
 
 function addBallon() {
-    balle = "ok"
+    balle = "lesDistenciels"
     tablu.push(balle)
     for (g = tablu.length - 1; g < tablu.length; g++) {
         tablu[g] = document.createElement("div")
@@ -92,13 +102,14 @@ function addBallon() {
     }
 }
 
-function mouvement(j) {
-    j.style.background = couleurRandom();
-    j.style.left = rand(80) + "%"
-    j.style.top = rand(80) + "%"
-}
+
 
 function bougeBallon() {
+    function mouvement(j) {
+        j.style.background = couleurRandom();
+        j.style.left = rand(80) + "%"
+        j.style.top = rand(80) + "%"
+    }
     const ballon = document.querySelector("body > div > div:nth-child(1)")
     const ballon1 = document.querySelector("body > div > div:nth-child(2)")
     const ballon2 = document.querySelector("#ballon2");
@@ -113,5 +124,5 @@ function bougeBallon() {
 
 }
 
-let lightInterval = window.setInterval(changeLight, time)
+
 document.querySelector('#score').innerHTML = score
