@@ -5,11 +5,12 @@
     color: white;
     padding-right: 10px;
 }
-
+html{
+    cursor: crosshair;
+}
 body {
     background-color: rgb(184, 201, 184);
     font-family: sans-serif;
-    cursor: crosshair;
 }
 
 #lights {

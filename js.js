@@ -1,4 +1,3 @@
-
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
 const body = document.querySelector("body > div")
