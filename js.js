@@ -50,13 +50,12 @@ function changeLight() {
 
 }
 
-
 function increaseScore() {
     if (light == 2) {
         document.querySelector('#score').innerHTML = score
         plus = 1
         ballon2.style.background = "green";
-       
+
 
     } else {
         plus = 0
@@ -80,30 +79,17 @@ function couleurRandom() {
     return color;
 }
 
-// class rond {
-//     constructor(nameof, classe, left, top) {
-//         this.nameof = nameof;
-//         this.classe = classe
-//         this.left = left
-//         this.top = top
-//     }
-// }
-
 let tablu = []
-let plusElem = 0;
+
 function addBallon() {
     balle = "ok"
     tablu.push(balle)
-    plusElem += 1
-    for (g = tablu.length -1; g < tablu.length; g++) {
+    for (g = tablu.length - 1; g < tablu.length; g++) {
         tablu[g] = document.createElement("div")
         tablu[g].className = "ballon"
         body.appendChild(tablu[g])
 
     }
-    // pushIn = tab.push(couleurRandom(),"ballon","rand(80)","rand(80)",)
-    // time = 500 
-    //  lightInterval = window.setInterval(changeLight, time)
 }
 
 function mouvement(j) {
