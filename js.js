@@ -91,28 +91,16 @@ function test(){
     tablu.push(balle)
     console.log(tablu)
     // pushIn = tab.push(couleurRandom(),"ballon","rand(80)","rand(80)",)
-    
-    
     // time = 500
     //  lightInterval = window.setInterval(changeLight, time)
     
 }
 
 
-
-
-// let tab = [{
-//         nom : "nom",
-//         class : "ballon",
-//         left : "rand(80) + "%"",
-//         top : "rand(80) + "%"",
-//     },
-// ]
-// let pushIn = tab.push(couleurRandom(),"ballon","rand(80)","rand(80)",)
-// console.log(tab)
-
-
     function bougeBallon() {
+        for (let i = 0; i < tablu.length ; i++){
+            
+        }
         newBallon.style.background = couleurRandom();
         newBallon.style.left = rand(80) + "%"
         newBallon.style.top = rand(80) + "%"

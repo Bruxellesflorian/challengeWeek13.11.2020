@@ -32,6 +32,7 @@ body {
 
 .ballon {
     position: absolute;
+    transition-duration: 0.9s;
     width: 100px;
     height: 100px;
     border-radius: 100%;
