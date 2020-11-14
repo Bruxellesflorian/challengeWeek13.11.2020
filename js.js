@@ -56,6 +56,8 @@ function increaseScore() {
         document.querySelector('#score').innerHTML = score
         plus = 1
         ballon2.style.background = "green";
+       
+
     } else {
         plus = 0
         ballon2.style.background = couleurRandom();
@@ -78,9 +80,6 @@ function couleurRandom() {
     return color;
 }
 
-
-
-
 // class rond {
 //     constructor(nameof, classe, left, top) {
 //         this.nameof = nameof;
@@ -91,13 +90,16 @@ function couleurRandom() {
 // }
 
 let tablu = []
-function test() {
+let plusElem = 0;
+function addBallon() {
     balle = "ok"
     tablu.push(balle)
-    for (g = 0; g < tablu.length; g++) {
+    plusElem += 1
+    for (g = tablu.length -1; g < tablu.length; g++) {
         tablu[g] = document.createElement("div")
         tablu[g].className = "ballon"
         body.appendChild(tablu[g])
+
     }
     // pushIn = tab.push(couleurRandom(),"ballon","rand(80)","rand(80)",)
     // time = 500 
@@ -109,7 +111,6 @@ function mouvement(j) {
     j.style.left = rand(80) + "%"
     j.style.top = rand(80) + "%"
 }
-
 
 function bougeBallon() {
     const ballon = document.querySelector("body > div > div:nth-child(1)")
@@ -125,11 +126,6 @@ function bougeBallon() {
     ballon2.style.top = rand(80) + "%"
 
 }
-
-
-
-
-
 
 let lightInterval = window.setInterval(changeLight, time)
 document.querySelector('#score').innerHTML = score
