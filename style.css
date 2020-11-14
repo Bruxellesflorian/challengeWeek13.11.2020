@@ -1,0 +1,84 @@
+.columnCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding-right: 10px;
+}
+
+body {
+    background: #FFF;
+    font-family: sans-serif;
+    cursor: crosshair;
+}
+
+#lights {
+    display: flex;
+}
+
+#lights>div {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #AAA;
+    margin: 12px;
+}
+
+.zone {
+    width: 100%;
+    height: 900px;
+    background-color: rgb(184, 201, 184);
+}
+
+.ballon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: rgb(180, 33, 33);
+
+}
+
+.ballon:hover {
+    border: solid rgb(252, 252, 252) 5px;
+}
+
+#ballon2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: green;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#lights {
+    background-color: rgb(121, 121, 168);
+    display: flex;
+    justify-content: center;
+}
+
+.scored {
+    position: relative;
+    left: 80%;
+    font-size: 30px;
+    background-color: white;
+    width: 150px;
+    padding: 15px;
+}
+
+
+
+.aide {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    background-color: rgb(238, 175, 175);
+    width: 400px;
+    height: 150px;
+    padding: 20px;
+    font-size: large;
+}
