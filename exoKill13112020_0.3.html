@@ -1,0 +1,189 @@
+<style>
+    body {
+        background: #FFF;
+        font-family: sans-serif;
+    }
+
+    #lights {
+        display: flex;
+    }
+
+    #lights>div {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: #AAA;
+        margin: 12px;
+    }
+
+    #zone {
+        width: 1300px;
+        height: 800px;
+        background-color: rgb(127, 151, 127);
+
+    }
+.zone{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(184, 201, 184);
+}
+    #ballon {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: rgb(180, 33, 33);
+    }
+    #ballon1 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: rgb(190, 182, 67);
+    }
+    #ballon2 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: green;
+    }
+
+    canvas {
+        border: 1px solid black;
+    }
+    #lights{
+        background-color: rgb(121, 121, 168);
+        display : flex;
+        justify-content: center;
+    }
+    .scored{
+        position: relative;
+        left: 80%;
+        font-size: 30px;
+        background-color: white;
+        width: 150px;
+        padding: 15px;
+    }
+    .rond:hover:hover{
+        border: solid rgb(252, 252, 252) 5px;
+    }
+    .aide{
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        background-color: rgb(238, 175, 175);
+        width: 400px;
+        height: 150px;
+        padding: 20px;
+        font-size: large;
+    }
+</style>
+
+<body>
+    <div class="zone">
+        <div class="rond" id="ballon"></div>
+        <div class="rond" id="ballon1"></div>
+        <div class="rond" id="ballon2"></div>
+        <div id="lights">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="scored">
+            Score: <span id="score"></span>
+        </div>
+        <div class="aide">
+            <p>Ce que vous devez faire :</p>
+            <p>- Le score augmente de 1, uniquement si la balle VERTE est appuyé pendant le feu vert!</p> 
+        </div>
+    
+
+    </div>
+</body>
+<script>
+    function rand(max) {
+        max = Math.floor(max);
+        return Math.floor(Math.random() * max);
+    }
+
+    let light = 0;
+    let score = 0;
+    let plus = 0;
+
+    const button = document.querySelector("#ballon2")
+    button.addEventListener("click", essaieDeBouton);
+
+    function essaieDeBouton() {
+        score += plus
+        score.innerHTML = score
+        document.querySelector('#score').innerHTML = score
+    }
+
+    function changeLight() {
+        bougeBallon()
+        const lightDivs = document.querySelectorAll('#lights>div');
+        const colors = ['#F00', '#AA0', '#0F0']
+        increaseScore()
+        if (light === 0) {
+            for (let lightDiv of lightDivs) {
+                lightDiv.style.background = '#AAA'
+            }
+        }
+
+        lightDivs[light].style.background = colors[light]
+
+        if (light < 2)
+            light++;
+        else
+            light = 0
+
+    }
+
+    function increaseScore() {
+        if (light == 2) {
+            document.querySelector('#score').innerHTML = score
+            plus = 1
+        } else {
+            plus = 0
+        }
+
+
+        if (score >= 5) {
+            window.clearInterval(lightInterval)
+            alert('VICTORY!')
+        }
+    }
+
+    function couleurRandom() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+function bougeBallon(){
+    const ballon = document.querySelector("#ballon");
+    ballon.style.background= couleurRandom();
+    ballon.style.left= rand(80)+"%"
+    ballon.style.top = rand(80)+"%"
+
+    const ballon1 = document.querySelector("#ballon1");
+    ballon1.style.background= couleurRandom();
+    ballon1.style.left= rand(80)+"%"
+    ballon1.style.top = rand(80)+"%"
+
+    const ballon2 = document.querySelector("#ballon2");
+    ballon2.style.left= rand(80)+"%"
+    ballon2.style.top = rand(80)+"%"
+}
+
+
+    document.querySelector('#score').innerHTML = score
+    const lightInterval = window.setInterval(changeLight, 1000)
+
+
+</script>
