@@ -19,7 +19,6 @@ let time = 1000;
 let timer = 9;
 const compteurTime = document.querySelector("#lights > span:nth-child(5)")
 compteurTime.innerHTML = timer
-let nbTour = 0;
 let light = 0;
 let score = 0;
 let plus = 0;
@@ -28,7 +27,7 @@ const button = document.querySelector("#ballon2")
 button.addEventListener("click", leTireDesEnfers);
 
 function leTireDesEnfers() {
-    timer += 6
+    timer += 5
     addBallon()
     score += plus
     score.innerHTML = score
@@ -38,7 +37,7 @@ function leTireDesEnfers() {
 function changeLight() {
     if(timer <= 0){
         window.location =""
-        alert("T'as perdu")
+        alert("T'as perdu ! Ton score : "+ score)
     
     }
     bougeBallon()
@@ -78,7 +77,6 @@ function increaseScore() {
     }
 
 }
-
 
 function couleurRandom() {
     var letters = '0123456789ABCDEF';
