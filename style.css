@@ -94,6 +94,7 @@ body > div > div.aide > button{
     justify-content: center;
     font-weight: bold;
     
+    
 }
 
 body > div > div.aide > div > i{
@@ -101,5 +102,31 @@ body > div > div.aide > div > i{
 }
 body > div > div.aide > div > a{
     padding: 20px;
+    margin-left:50px ;
     text-decoration: none;
+}
+.ame{
+    font-size: 60px;
+    
+}
+body > span:nth-child(2){
+    position: absolute;
+    top: 150px;
+    left:10% ;
+    
+    display: none;
+    color: rgb(184, 201, 184);
+}
+body > span:nth-child(3){
+    position: absolute;
+    top: 250px;
+    right: 10% ;
+    display: none;
+    color: rgb(184, 201, 184);
+}
+body > span:nth-child(4){
+    position: absolute;
+    bottom: 20px;
+    display: none; 
+    color: rgb(184, 201, 184);
 }

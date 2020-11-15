@@ -1,37 +1,47 @@
-document.querySelector("#ballon2").style.display="none"
+document.querySelector("#ballon2").style.display = "none"
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
 const body = document.querySelector("body > div")
 body.appendChild(newBallon)
 
 const skull = document.querySelector("body > div > div.aide > div > i")
-skull.onmouseover = function(){
-    document.querySelector("html").style.background='black'
-    document.querySelector("#lights").style.background='rgb(19, 19, 88)'
+skull.onmouseover = function () {
+    document.querySelector("html").style.background = 'black'
+    document.querySelector("#lights").style.background = 'rgb(19, 19, 88)'
+    document.querySelector("body > span:nth-child(2)").style.display = 'block'
+    document.querySelector("body > span:nth-child(3)").style.display = 'block'
+    document.querySelector("body > span:nth-child(4)").style.display = 'block'
 };
-skull.onmouseleave = function(){
-    document.querySelector("html").style.background= "rgb(184, 201, 184)"
-document.querySelector("#lights").style.background='rgb(121, 121, 168)'};
-skull.addEventListener("click", function () {
+skull.onmouseleave = function () {
+    document.querySelector("html").style.background = "rgb(184, 201, 184)"
+    document.querySelector("#lights").style.background = 'rgb(121, 121, 168)'
     
-  for (bb = 0; bb<100;bb++){
-    addBallon()
-  }
-  timer += 20
+};
 
-    
+skull.addEventListener("click", function () {
+    setTimeout(function(){   
+        document.querySelector("body > span:nth-child(2)").style.display = 'none'
+        document.querySelector("body > span:nth-child(3)").style.display = 'none'
+        document.querySelector("body > span:nth-child(4)").style.display = 'none' }, 3000);
+
+    for (bb = 0; bb < 100; bb++) {
+        addBallon()
+    }
+    timer += 20
+
+
     let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
-    document.querySelector("#ballon2").style.display="block"
+    document.querySelector("#ballon2").style.display = "block"
 })
 
 const close = document.querySelector("body > div > div.aide > button")
 close.addEventListener("click", function () {
-     let lightInterval = window.setInterval(changeLight, time)
+    let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
-    document.querySelector("#ballon2").style.display="block"
+    document.querySelector("#ballon2").style.display = "block"
 })
 
 function rand(max) {
@@ -58,10 +68,10 @@ function leTireDesEnfers() {
 }
 
 function changeLight() {
-    if(timer <= 0){
-        window.location =""
-        alert("T'as perdu ! Ton score : "+ score)
-    
+    if (timer <= 0) {
+        window.location = ""
+        alert("T'as perdu ! Ton score : " + score)
+
     }
     bougeBallon()
     const lightDivs = document.querySelectorAll('#lights>div');
@@ -80,8 +90,8 @@ function changeLight() {
         light++;
     else
         light = 0
-        timer -= 1
-        compteurTime.innerHTML = timer
+    timer -= 1
+    compteurTime.innerHTML = timer
 
 }
 
