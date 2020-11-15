@@ -1,4 +1,3 @@
-document.getElementById("yt").style.display="none"
 document.querySelector("#ballon2").style.display="none"
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
@@ -6,12 +5,21 @@ const body = document.querySelector("body > div")
 body.appendChild(newBallon)
 
 const skull = document.querySelector("body > div > div.aide > div > i")
+skull.onmouseover = function(){
+    document.querySelector("html").style.background='black'
+    document.querySelector("#lights").style.background='rgb(19, 19, 88)'
+};
+skull.onmouseleave = function(){
+    document.querySelector("html").style.background= "rgb(184, 201, 184)"
+document.querySelector("#lights").style.background='rgb(121, 121, 168)'};
 skull.addEventListener("click", function () {
     
   for (bb = 0; bb<100;bb++){
     addBallon()
   }
-  document.getElementById("yt").style.display="block"
+  timer += 20
+
+    
     let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"

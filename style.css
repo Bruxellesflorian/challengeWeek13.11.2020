@@ -7,9 +7,11 @@
 }
 html{
     cursor: crosshair;
+    background-color: rgb(184, 201, 184);
+    transition-duration: 1.5s;
 }
 body {
-    background-color: rgb(184, 201, 184);
+    
     font-family: sans-serif;
 }
 
@@ -57,6 +59,7 @@ canvas {
     display: flex;
     justify-content: center;
     padding-left: 100px;
+    transition-duration: 1s;
 }
 
 .scored {
@@ -89,4 +92,14 @@ body > div > div.aide > button{
 .skull{
     display: flex;
     justify-content: center;
+    font-weight: bold;
+    
+}
+
+body > div > div.aide > div > i{
+   font-size: 50px;
+}
+body > div > div.aide > div > a{
+    padding: 20px;
+    text-decoration: none;
 }
