@@ -1,3 +1,4 @@
+document.getElementById("yt").style.display="none"
 document.querySelector("#ballon2").style.display="none"
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
@@ -10,6 +11,7 @@ skull.addEventListener("click", function () {
   for (bb = 0; bb<100;bb++){
     addBallon()
   }
+  document.getElementById("yt").style.display="block"
     let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
