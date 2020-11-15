@@ -86,3 +86,7 @@ body > div > div.aide > button{
     font-size: large;
     color : white;
 }
+.skull{
+    display: flex;
+    justify-content: center;
+}

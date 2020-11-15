@@ -4,6 +4,18 @@ newBallon.className = "ballon"
 const body = document.querySelector("body > div")
 body.appendChild(newBallon)
 
+const skull = document.querySelector("body > div > div.aide > div > i")
+skull.addEventListener("click", function () {
+    
+  for (bb = 0; bb<100;bb++){
+    addBallon()
+  }
+    let lightInterval = window.setInterval(changeLight, time)
+    let divAide = document.querySelector("body > div > div.aide")
+    divAide.style.display = "none"
+    document.querySelector("#ballon2").style.display="block"
+})
+
 const close = document.querySelector("body > div > div.aide > button")
 close.addEventListener("click", function () {
      let lightInterval = window.setInterval(changeLight, time)
