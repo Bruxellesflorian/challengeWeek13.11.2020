@@ -22,7 +22,7 @@ skull.addEventListener("click", function () {
     setTimeout(function(){   
         document.querySelector("body > span:nth-child(2)").style.display = 'none'
         document.querySelector("body > span:nth-child(3)").style.display = 'none'
-        document.querySelector("body > span:nth-child(4)").style.display = 'none' }, 3000);
+        document.querySelector("body > span:nth-child(4)").style.display = 'none' }, 1000);
 
     for (bb = 0; bb < 100; bb++) {
         addBallon()
