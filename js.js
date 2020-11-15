@@ -1,3 +1,4 @@
+document.querySelector("#ballon2").style.display="none"
 const newBallon = document.createElement("div")
 newBallon.className = "ballon"
 const body = document.querySelector("body > div")
@@ -8,6 +9,7 @@ close.addEventListener("click", function () {
      let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
+    document.querySelector("#ballon2").style.display="block"
 })
 
 function rand(max) {
