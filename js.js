@@ -38,6 +38,10 @@ skull.addEventListener("click", function () {
 
 const close = document.querySelector("body > div > div.aide > button")
 close.addEventListener("click", function () {
+    setTimeout(function(){   
+        document.querySelector("body > span:nth-child(2)").style.display = 'none'
+        document.querySelector("body > span:nth-child(3)").style.display = 'none'
+        document.querySelector("body > span:nth-child(4)").style.display = 'none' }, 1000);
     let lightInterval = window.setInterval(changeLight, time)
     let divAide = document.querySelector("body > div > div.aide")
     divAide.style.display = "none"
